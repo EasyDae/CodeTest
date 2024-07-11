@@ -19,7 +19,7 @@ void DFS(int num, int len)
     if (len == n)
     {
         cout << num << '\n';
-        return 0;
+        return;
     }
 
     for (int i = 1; i < 10; ++i)
