@@ -1,7 +1,6 @@
 //https://www.acmicpc.net/problem/1922
 
 import java.io.*;
-import java.math.*;
 import java.util.*;
 
 class Node implements Comparable<Node>{
