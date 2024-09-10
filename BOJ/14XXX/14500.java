@@ -17,7 +17,8 @@ public class Main {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        clear();
+        map = new int[n][m];
+        visited = new boolean[n][m];
 
         for(int i=0; i<n; ++i){
             st = new StringTokenizer(br.readLine());
@@ -36,11 +37,6 @@ public class Main {
         }
         
         System.out.println(max);
-    }
-
-    static void clear(){
-        map = new int[n][m];
-        visited = new boolean[n][m];
     }
 
     static void DFS(int x, int y, int depth, int sum){
