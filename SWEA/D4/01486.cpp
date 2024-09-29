@@ -1,26 +1,24 @@
 #include<iostream>
-#include<vector>
 #include<algorithm>
-#include<string.h>
 
 using namespace std;
 
-int n, b, diff = 99999;
-vector<int> vec;
-bool check[20];
+bool visited[21];
+int arr[21];
+int n, b, ans;
 
 void DFS(int idx, int sum) {
     if (sum >= b) {
-        diff = min(diff, sum - b);
+        ans = min(ans, sum - b);
         return;
     }
 
     for (int i = idx; i < n; ++i) {
-        if (check[i])
-            continue;
-        check[i] = 1;
-        DFS(i, sum + vec[i]);
-        check[i] = 0;
+        if (!visited[i]) {
+            visited[i] = 1;
+            DFS(i, sum + arr[i]);
+            visited[i] = 0;
+        }
     }
 }
 
@@ -29,21 +27,15 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int t; cin >> t;
-    int test_case;
-
-    for (test_case = 1; test_case <= t; ++test_case)
-    {
-        diff = 99999;
-        memset(check, 0, sizeof(check));
+    int T; cin >> T;
+    for (int t = 1; t <= T; ++t) {
+        ans = 200001;
         cin >> n >> b;
-        vec = vector<int>(n);
-
         for (int i = 0; i < n; ++i)
-            cin >> vec[i];
+            cin >> arr[i];
 
         DFS(0, 0);
-        cout << '#' << test_case << ' ' << diff << '\n';
+
+        cout << '#' << t << ' ' << ans << '\n';
     }
-    return 0;
 }
