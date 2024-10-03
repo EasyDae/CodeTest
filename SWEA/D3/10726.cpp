@@ -10,19 +10,16 @@ int main() {
     int T; cin >> T;
     for (int t = 1; t <= T; ++t) {
         int n, m; cin >> n >> m;
-        int cnt = 0;
-        cout << '#' << t << ' ';
-        while (m) {
+        while (m != 0 && n != 0) {
             if (m % 2)
-                cnt++;
+                n--;
             else
                 break;
-
             m /= 2;
         }
-        if (cnt >= n)
-            cout << "ON\n";
+        if (!n)
+            cout << '#' << t << ' ' << "ON\n";
         else
-            cout << "OFF\n";
+            cout << '#' << t << ' ' << "OFF\n";
     }
 }
