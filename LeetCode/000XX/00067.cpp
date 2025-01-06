@@ -1,5 +1,3 @@
-//https://leetcode.com/problems/add-binary/description/
-
 class Solution {
 public:
     string addBinary(string a, string b) {
