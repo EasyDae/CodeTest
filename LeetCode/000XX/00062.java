@@ -1,5 +1,3 @@
-//https://leetcode.com/problems/unique-paths/?envType=problem-list-v2&envId=dynamic-programming
-
 class Solution {
     public int uniquePaths(int m, int n) {
         int[][] arr = new int[m][n];
